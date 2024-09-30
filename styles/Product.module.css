@@ -1,0 +1,180 @@
+.container{
+    height:calc(100vh-100px);
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.left{
+    flex:1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right{
+    flex:1;
+    padding: 20px;
+}
+.imgContainer{
+    margin-left: 100px;
+    margin-top: 100px;
+    width:80%;
+    height: auto;
+    position: relative;
+}
+.title{
+    padding-bottom:10px ;
+}
+.price{
+    color:red;
+    font-size:24px;   
+    font-weight: 400;
+    border-bottom:1px ssolid #d1411e ;
+}
+.desc{
+    margin: 10px 0px  ;
+}
+.sizes{
+    width:40%;
+    padding: 30px 0px;
+    display:flex;
+    justify-content: space-between;
+}
+.size{
+    cursor: pointer;
+    width:30px;
+    height: 30px;
+    position: relative;
+}
+.size:nth-child(2){
+    width: 40px;
+    height: 40px;
+}
+
+.size:last-child{
+    height:50px;
+    width:50px;
+}
+.number{
+    position: absolute;
+    top:-5px;
+    right: -20px;
+    background-color: aqua;
+    color: #d1411e;
+    font-size: 12px;
+    padding:0 5px ;
+    border-radius:10px ;
+}
+
+.ingredients{
+    justify-content: space-between;
+    margin-bottom:30px;
+    padding-top: 15px;
+}
+.option{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    padding-top: 20px;
+    font-size: 14px;
+    font-weight:500;
+    flex-basis: 100%;
+}
+
+.checkbox{
+    margin-right: 10px;
+    width: 20px;
+    height:20px;
+}
+
+.quantity{
+    width: 50px;
+    height:30px;
+}
+.button{
+    height: 30px;
+
+    margin-left: 10px;
+    background-color: #d1411e;
+    color: white;
+    border-radius:40px;
+    padding: 10px;
+    border:none;
+    cursor: pointer;
+    font-weight: 500;
+}
+@media screen and (max-width: 480px) {
+    .container {
+      height: auto;
+      text-align: center;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+  
+    .imgContainer {
+      width: 70vw;
+      height: auto;
+      margin-left: 0; /* Adjust margin for smaller screens */
+      margin-top: 0;
+
+    }
+  
+    .title {
+      margin: 5px;
+    }
+  
+    .sizes {
+      width: 100%;
+      padding: 0px 20px;
+    }
+  
+    .ingredients {
+      flex-direction: column;
+    }
+  
+    .option {
+      margin: 10px;
+      font-size: 18px;
+    }
+  
+    .checkbox {
+      width: 25px;
+      height: 25px;
+    }
+  
+    .quantity,
+    .button {
+      height: 50px;
+      padding: 10px 20px;
+    }
+    .sizes {
+        width: 100%; /* Take full width on smaller screens */
+        justify-content: space-around; /* Spread the sizes evenly */
+        padding: 10px 0; /* Reduce padding */
+    }
+
+    .size {
+        width: 25px;
+        height: 25px;
+    }
+
+    .size:nth-child(2) {
+        width: 35px;
+        height: 35px;
+    }
+
+    .size:last-child {
+        width: 45px;
+        height: 45px;
+    }
+
+    .number {
+        font-size: 10px; /* Adjust number size for smaller screens */
+        top: -3px;
+        right: -10px;
+    }
+    .quantity {
+       width:50px ;
+    }
+  }

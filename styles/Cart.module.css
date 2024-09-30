@@ -1,0 +1,129 @@
+.container{
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.left{
+    flex:2;
+    min-width: 300px;
+}
+.right{
+    flex:1;
+    display: flex;
+    justify-content: flex-end;
+}
+.imgContainer{
+    width:100px;
+    height:100px;
+    position:relative;
+}
+.table{
+    width: 100%;
+    border-spacing:20px ;
+}
+.name{
+    font-weight: 500;
+    color: black;
+    font-size: 18px;
+
+}
+.total{
+    font-size:18px;
+    font-weight: 500;
+    
+   
+}
+.wrapper{
+    margin-top: 20px;
+    width:90%;
+    max-height:300px;
+    background-color:  rgb(58, 49, 49);
+    padding: 50px;
+    padding-top: 18px;
+    display: flex;
+    justify-content:space-between ;
+    flex-direction: column;
+    color: white;
+     
+}
+.totalTextTitle{
+    margin-right: 10px;
+}
+.button{
+    height: 40px;
+    background-color: #d1411e;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .table {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .trTitle{
+        display: none;
+    }
+    .tr{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .imgContainer{
+       width: 35vw;
+       height:35vw ;
+       
+    }
+    .name,.total{
+        font-size: 24px;
+    }
+    .extras, .price, .quantity{
+        font-size:22px;
+    }
+    .price::before{
+        content:"Price: ";
+        font-weight:bold;
+    }
+    .quantity::before{
+        content:"Quantity: ";
+        font-weight: bold;
+    }
+    .total::before{
+        content:"Total: ";
+        font-weight: bold;
+    }
+
+    .wrapper{
+        width: 100%;
+    }
+}
+
+.paymentMethods{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+.payButton{
+    padding: 10px 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    background-color: white;
+    color: teal;
+    font-weight: bold;
+}
