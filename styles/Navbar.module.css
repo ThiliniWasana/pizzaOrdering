@@ -1,11 +1,12 @@
 .container {
-  height: 90px;
+   height: 90px;
   padding: 0 20px;
   background-color: rgb(157, 255, 0);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 999;
 }
@@ -135,6 +136,38 @@
   color: white;
   cursor: pointer;
 }
+
+.button{
+   margin-right: 20px;
+}
+
+.buttonLogin {
+  margin-right: 20px;
+  font-weight: bold;
+  color: darkorange; /* You can change this to whatever color you prefer */
+}
+
+.buttonRegister{
+  background-color: rgb(255, 98, 0); /* Set background color to orange */
+  color: white; /* Set the text color to white */
+  padding: 8px 16px; /* Adjust the padding as needed */
+  border-radius: 999px; /* Full rounded */
+  font-weight: bold; /* Bold text */
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.buttonRegister:hover {
+  background-color: darkorange;
+}
+.buttonLogin:hover {
+  color: white;
+}
+
+
+
+
 
 /* Media queries */
 @media screen and (max-width: 768px) {

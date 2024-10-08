@@ -19,6 +19,7 @@ const ProductSchema = new mongoose.Schema({
     type: [Number],
     required: true,
   },
+ 
   extraOptions: {
     type: [
       {
@@ -26,6 +27,10 @@ const ProductSchema = new mongoose.Schema({
         price: { type: Number, required: true },
       },
     ],
+  },
+  category: {
+    type: String, // Category like "Drinks", "Salad", etc.
+    required: true,
   },
 },
    {timestamps:true}

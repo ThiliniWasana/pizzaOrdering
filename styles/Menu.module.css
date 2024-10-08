@@ -1,0 +1,148 @@
+
+/* .menuPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+   */
+  /* .heroSection {
+    width: 100%;
+    height: 400px; 
+    background-image: url('/image/pizzamenu-bg.jpg'); 
+    background-size: cover;
+    background-position: center; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    position: relative; 
+  }
+   */
+  /* .heroText {
+    color: white;
+    font-size: 2.5rem; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    z-index: 1; 
+  }
+  
+  .menuContainer {
+    width: 100%;
+    padding: 20px; 
+  } */
+  
+  /* .menuGrid {
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 20px;
+  }
+  
+  .menuItem {
+    background: white; 
+    border-radius: 10px; 
+    padding: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .menuImage {
+    width: 100%; 
+    height: auto;
+  } */
+  /* .categoryBar {
+    border-radius: 50px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    display: flex; 
+    justify-content: center; 
+    margin: 20px 0; 
+} */
+
+/* .categoryButton {
+    
+    color: #333; 
+    border: none; 
+    padding: 10px 20px; 
+    margin: 0 10px; 
+    border-radius: 5px;
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+} */
+
+/* .categoryButton:hover {
+    background-color: greenyellow; 
+    border-radius: 50px;
+} */
+
+
+
+.menuPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heroSection {
+    width: 100%;
+    height: 400px; /* Adjust height as necessary */
+    background-image: url('/image/pizzamenu-bg.jpg'); /* Update to the correct path */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the image */
+    display: flex; /* Use flexbox to center the text */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative; /* Position relative for absolute text */
+}
+
+.heroText {
+    color: white; /* Text color */
+    font-size: 2.5rem; /* Font size */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional shadow for better visibility */
+    z-index: 1; /* Ensure text is above background */
+}
+
+.categoryBar {
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: center; /* Center the buttons */
+    margin: 20px 0; /* Add some margin */
+}
+
+.categoryButton {
+    background-color: #fff; /* Button background color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding */
+    margin: 0 10px; /* Space between buttons */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.categoryButton:hover {
+    background-color: #f0f0f0; /* Change background color on hover */
+}
+
+.active {
+    background-color: #4CAF50; /* Color for active category */
+    color: white; /* Text color for active category */
+}
+
+.menuContainer {
+    width: 100%;
+    padding: 20px; /* Add some padding */
+}
+
+.menuGrid {
+    display: grid; /* Use grid layout for menu items */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between items */
+}
+
+.menuItem {
+    background: white; /* Background for items */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px; /* Padding for items */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for items */
+}
+
+.menuImage {
+    width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+}
+

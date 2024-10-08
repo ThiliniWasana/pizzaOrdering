@@ -17,17 +17,18 @@ export default  async function handler(req, res) {
         
     }
     if(method==="POST"){
-        if(!token || token !==process.env.token){
-            return res.status(401).json("not authanticated")
+        if(!token || token !== process.env.token){
+            return res.status(401).json("Not authenticated");
         }
-        try{
-            const product= await Product.create(req.body) 
-            res.status(201).json(product)
-
-        }catch(err){
-           res.status(500).json(err);
+        try {
+            const product = await Product.create({
+                ...req.body,  // This will include the `category` field from the frontend
+                category: req.body.category,
+            });
+            res.status(201).json(product);
+        } catch (err) {
+            res.status(500).json(err);
         }
-
     }
 
   }

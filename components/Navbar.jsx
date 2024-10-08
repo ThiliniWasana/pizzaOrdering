@@ -7,7 +7,6 @@
 // const Navbar = () => {
 //   const quantity=useSelector(state=>state.cart.quantity)
 
-
 //   return (
 //     <div className={styles.container}>
 //       <div className={styles.item}>
@@ -42,31 +41,51 @@
 
 // export default Navbar
 
-
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import styles from "../styles/Navbar.module.css";
-import Image from 'next/image';
-import { useSelector } from 'react-redux';
-import Link from 'next/link';
+import Image from "next/image";
+import { useSelector } from "react-redux";
+import Link from "next/link";
+import RegisterForm from "./RegisterForm";
 
 const Navbar = () => {
-  const quantity = useSelector(state => state.cart.quantity);
+  const quantity = useSelector((state) => state.cart.quantity);
   const [isOpen, setIsOpen] = useState(false); // State to handle dropdown visibility
+  const [showRegisterForm, setShowRegisterForm] = useState(false);
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen); // Toggle dropdown
-  }
+  };
 
   const closeMenu = () => {
     setIsOpen(false); // Close dropdown
-  }
+  };
+  const openRegisterForm = () => {
+    setShowRegisterForm(true); // Open the register form
+  };
 
+  const closeRegisterForm = () => {
+    setShowRegisterForm(false); // Close the register form
+  };
+  const openLoginForm = () => {
+    setIsLoginOpen(true); // Open login form
+  };
+
+  const closeLoginForm = () => {
+    setIsLoginOpen(false); // Close login form
+  };
   return (
     <div className={styles.container}>
       {/* Left Section with Call Button */}
       <div className={styles.item}>
         <div className={styles.callButton}>
-          <Image src="/image/call-icon.jpg" alt="Call Icon" width="32" height="32" />
+          <Image
+            src="/image/call-icon.jpg"
+            alt="Call Icon"
+            width="32"
+            height="32"
+          />
         </div>
         <div className={styles.texts}>
           <div className={styles.text}>ORDER NOW</div>
@@ -84,12 +103,22 @@ const Navbar = () => {
         {/* Full-screen dropdown menu when hamburger is clicked */}
         {isOpen && (
           <div className={styles.menuOverlay}>
-            <div className={styles.closeButton} onClick={closeMenu}>×</div>
+            <div className={styles.closeButton} onClick={closeMenu}>
+              ×
+            </div>
             <ul className={styles.dropdownList}>
-              <li className={styles.dropdownItem} onClick={closeMenu}>Home</li>
-              <li className={styles.dropdownItem} onClick={closeMenu}>Products</li>
-              <li className={styles.dropdownItem} onClick={closeMenu}>Menu</li>
-              <li className={styles.dropdownItem} onClick={closeMenu}>Contact</li>
+              <li className={styles.dropdownItem} onClick={closeMenu}>
+                Home
+              </li>
+              <li className={styles.dropdownItem} onClick={closeMenu}>
+                Products
+              </li>
+              <li className={styles.dropdownItem} onClick={closeMenu}>
+                Menu
+              </li>
+              <li className={styles.dropdownItem} onClick={closeMenu}>
+                Contact
+              </li>
             </ul>
           </div>
         )}
@@ -97,13 +126,22 @@ const Navbar = () => {
         {/* Normal Menu for large screens */}
         <ul className={styles.list}>
           <Link href="/" passHref>
-          <li className={styles.listItem}>Home</li>
+            <li className={styles.listItem}>Home</li>
           </Link>
           <li className={styles.listItem}>Products</li>
           <Image src="/image/logo.png" alt="Logo" width="150" height="150" />
           <li className={styles.listItem}>Menu</li>
           <li className={styles.listItem}>Contact</li>
         </ul>
+      </div>
+
+      <div className={styles.button}>
+        <Link href="/login" passHref className={styles.buttonLogin}>
+          Login
+        </Link>
+        <button onClick={openRegisterForm} className={styles.buttonRegister}>
+          Register
+        </button>
       </div>
 
       {/* Right Section with Cart */}
@@ -115,8 +153,16 @@ const Navbar = () => {
           </div>
         </div>
       </Link>
+
+      {/* Conditionally render the registration form */}
+      {showRegisterForm && <RegisterForm closeForm={closeRegisterForm} />}
+      {isLoginOpen && (
+        <div className={styles.modalOverlay}>
+          <LoginForm onClose={closeLoginForm} />
+        </div>
+      )}
     </div>
   );
-}
+};
 
 export default Navbar;

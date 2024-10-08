@@ -10,6 +10,8 @@ const Add = ({ setClose }) => {
   const [prices, setPrices] = useState([]);
   const [extraOptions, setExtraOptions] = useState([]);
   const [extra, setExtra] = useState(null);
+  const [category, setCategory] = useState("");//new
+  const categories = ["Drinks", "Salad", "Pasta", "Burgers", "Desserts"];//new
 
   const changePrice = (e, index) => {
     const currentPrices = prices;
@@ -42,6 +44,7 @@ const Add = ({ setClose }) => {
         prices,
         extraOptions,
         img: url,
+        category,//new
       };
 
       await axios.post("http://localhost:3000/api/products", newProduct);
@@ -101,6 +104,23 @@ const Add = ({ setClose }) => {
             />
           </div>
         </div>
+           {/*new*/}
+        <div className={styles.item}>
+          <label className={styles.label}>Category</label>
+          <select
+            className={styles.input}
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            <option value="">Select Category</option>
+            {categories.map((cat) => (
+              <option key={cat} value={cat}>
+                {cat}
+              </option>
+            ))}
+          </select>
+        </div>
+
         <div className={styles.item}>
           <label className={styles.label}>Extra</label>
           <div className={styles.extra}>
